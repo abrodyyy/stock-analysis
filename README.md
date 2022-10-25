@@ -1,22 +1,23 @@
 # stock-analysis
 ## Project Overview
-The purpose of this project is to assist a financial advisor in stock market analysis for green energy stocks. We've written and refactored code in Visual Basic Applications(VBA) to efficiently analyze stock data. The original code (green_stocks.xlsm) is sufficient for analyzing a small number of stocks, however, in order to analyze thousands, we refactored it to use less memory and improve efficiency (VBA_challenge.xlsm). 
+The purpose of this project is to assist a financial advisor in stock market analysis for green energy stocks. We've written and refactored code in Visual Basic Applications(VBA) to efficiently analyze the stock data. The original code (green_stocks.xlsm) is sufficient for analyzing a small number of stocks, however, in order to analyze thousands, we refactored it to use less memory and improve efficiency (VBA_challenge.xlsm). 
 
 ## Resources
 Data Source: green_stocks.xlsm
 - Software: Microsoft Excel 16.66.1, Visual Studio Code, 1.70.2
 
 ## Results: Refactor VBA code and measure performance
-> 1. The tickerIndex is set equal to zero before looping over the rows. (5 pt).
+> 1. The tickerIndex is set equal to zero before looping over the rows.
 
-    1b) 1a) Create a ticker Index
+    1b) Create a ticker Index
     tickerIndex = 0
+    
     1b) Create three output arrays
     Dim tickerVolumes(12) As Long
     Dim tickerStartingPrices(12) As Single
     Dim tickerEndingPrices(12) As Single
 
-> 2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (15 pt).
+> 2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices.
 
     2a) Create a for loop to initialize the tickerVolumes to zero.
     For j = 0 To 11
@@ -26,7 +27,7 @@ Data Source: green_stocks.xlsm
     2b) Loop over all the rows in the spreadsheet.
     For i = 2 To RowCount
 
-> 3. The tickerIndex is used to access the stock ticker index for the tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices arrays (15 pt).
+> 3. The tickerIndex is used to access the stock ticker index for the tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices arrays.
 
         3a) Increase volume for current ticker
         tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
@@ -47,11 +48,39 @@ Data Source: green_stocks.xlsm
 
     Next i
     
-> 4. The script loops through stock data, reading and storing all of the following values from each row: tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (25 pt).
+> 4. The script loops through stock data, reading and storing all of the following values from each row: tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices.
 
-> 5. Code for formatting the cells in the spreadsheet is working (5 pt).
+    4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
+    For i = 0 To 11
+        Worksheets("All Stocks Analysis").Activate
+        Cells(4 + i, 1).Value = tickers(i)
+        Cells(4 + i, 2).Value = tickerVolumes(i)
+        Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
+    Next i
 
-> 6. There are comments to explain the purpose of the code (5 pt).
+> 5. Code for formatting the cells in the spreadsheet is working.
+
+    5) Formatting
+    Worksheets("All Stocks Analysis").Activate
+    Range("A3:C3").Font.FontStyle = "Bold"
+    Range("A3:C3").Borders(xlEdgeBottom).LineStyle = xlContinuous
+    Range("B4:B15").NumberFormat = "#,##0"
+    Range("C4:C15").NumberFormat = "0.0%"
+    Columns("B").AutoFit
+    dataRowStart = 4
+    dataRowEnd = 15
+
+    For i = dataRowStart To dataRowEnd
+        If Cells(i, 3) > 0 Then
+            Cells(i, 3).Interior.Color = vbGreen
+        Else
+            Cells(i, 3).Interior.Color = vbRed
+        End If
+    Next i
+ 
+    endTime = Timer
+    MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
+    End Sub
 
 > 7. The outputs for the 2018 and 2018 stock analyses in the VBA_Challenge.xlsm workbook match the outputs from the AllStockAnalysis in the module (5 pt).
 
