@@ -6,7 +6,7 @@ The purpose of this project is to assist a financial advisor in stock market ana
 Data Source: green_stocks.xlsm
 - Software: Microsoft Excel 16.66.1, Visual Studio Code, 1.70.2
 
-## Results
+## Results: Refactor VBA code and measure performance
 1. The tickerIndex is set equal to zero before looping over the rows. (5 pt).
 
 2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (15 pt).
