@@ -92,8 +92,6 @@ Refactored code:
 
 ![VBA_Challenge_2017](https://user-images.githubusercontent.com/111623064/197681235-1b6b67f9-a176-4bf6-81b7-6c20a3dc147d.png)
 
-While both versions of code produce the same results, we can determine that the refactored code ran about 0.2 seconds faster than the original. 
-
 2018
 
 Original code: 
