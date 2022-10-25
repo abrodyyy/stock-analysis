@@ -95,9 +95,11 @@ Refactored code:
 2018
 
 Original code: 
+
 ![VBA_green_stocks_2018](https://user-images.githubusercontent.com/111623064/197681322-d9596cc5-b428-4381-b5f5-f93c3494cd73.png)
 
 Refactored code: 
+
 ![VBA_Challenge_2018](https://user-images.githubusercontent.com/111623064/197681306-a4652268-e0a8-4dd8-99ac-86abb9fd1ba1.png)
 
 While both versions of code produce the same results, we can determine that the refactored code ran about 0.2 seconds faster than the original. 
