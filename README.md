@@ -107,6 +107,7 @@ While both versions of code produce the same results, we can determine that the 
 ## Challenge Summary
 Advantages of refactoring code: 
 
+
 Disadvantages of refactoring code: 
 
 There is a detailed statement on the advantages and disadvantages of refactoring code in general (3 pt).
