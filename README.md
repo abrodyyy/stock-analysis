@@ -7,21 +7,28 @@ Data Source: green_stocks.xlsm
 - Software: Microsoft Excel 16.66.1, Visual Studio Code, 1.70.2
 
 ## Results: Refactor VBA code and measure performance
-1. The tickerIndex is set equal to zero before looping over the rows. (5 pt).
+> 1. The tickerIndex is set equal to zero before looping over the rows. (5 pt).
+    '1a) Create a ticker Index
+    tickerIndex = 0
 
-2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (15 pt).
+    '1b) Create three output arrays
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
 
-3. The tickerIndex is used to access the stock ticker index for the tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices arrays (15 pt).
+> 2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (15 pt).
 
-4. The script loops through stock data, reading and storing all of the following values from each row: tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (25 pt).
+> 3. The tickerIndex is used to access the stock ticker index for the tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices arrays (15 pt).
 
-5. Code for formatting the cells in the spreadsheet is working (5 pt).
+> 4. The script loops through stock data, reading and storing all of the following values from each row: tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (25 pt).
 
-6. There are comments to explain the purpose of the code (5 pt).
+> 5. Code for formatting the cells in the spreadsheet is working (5 pt).
 
-7. The outputs for the 2018 and 2018 stock analyses in the VBA_Challenge.xlsm workbook match the outputs from the AllStockAnalysis in the module (5 pt).
+> 6. There are comments to explain the purpose of the code (5 pt).
 
-8. The pop-up messages showing the elapsed run time for the script are saved as VBA_Challenge_2018.png and VBA_Challenge_2018.png (5 pt).
+> 7. The outputs for the 2018 and 2018 stock analyses in the VBA_Challenge.xlsm workbook match the outputs from the AllStockAnalysis in the module (5 pt).
+
+> 8. The pop-up messages showing the elapsed run time for the script are saved as VBA_Challenge_2018.png and VBA_Challenge_2018.png (5 pt).
 
 ## Challenge Summary
 Advantages of refactoring code: 
