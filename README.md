@@ -8,18 +8,45 @@ Data Source: green_stocks.xlsm
 
 ## Results: Refactor VBA code and measure performance
 > 1. The tickerIndex is set equal to zero before looping over the rows. (5 pt).
-    '1a) Create a ticker Index
-    tickerIndex = 0
 
-    '1b) Create three output arrays
+    1b) 1a) Create a ticker Index
+    tickerIndex = 0
+    1b) Create three output arrays
     Dim tickerVolumes(12) As Long
     Dim tickerStartingPrices(12) As Single
     Dim tickerEndingPrices(12) As Single
 
 > 2. Arrays are created for tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (15 pt).
 
+    2a) Create a for loop to initialize the tickerVolumes to zero.
+    For j = 0 To 11
+        tickerVolumes(j) = 0
+    Next j
+
+    2b) Loop over all the rows in the spreadsheet.
+    For i = 2 To RowCount
+
 > 3. The tickerIndex is used to access the stock ticker index for the tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices arrays (15 pt).
 
+        3a) Increase volume for current ticker
+        tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+        
+        3b) Check if the current row is the first row with the selected tickerIndex.
+        If Cells(i, 1).Value <> Cells(i - 1, 1).Value Then
+            tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+        End If
+        
+        3c) check if the current row is the last row with the selected ticker. If the next row’s ticker doesn’t match, increase the tickerIndex.
+        If Cells(i, 1).Value <> Cells(i + 1, 1).Value Then
+            tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+
+            3d) Increase the tickerIndex.
+            tickerIndex = tickerIndex + 1
+
+        End If
+
+    Next i
+    
 > 4. The script loops through stock data, reading and storing all of the following values from each row: tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices (25 pt).
 
 > 5. Code for formatting the cells in the spreadsheet is working (5 pt).
