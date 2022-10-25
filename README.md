@@ -82,9 +82,14 @@ Data Source: green_stocks.xlsm
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
     End Sub
 
-> 7. The outputs for the 2018 and 2018 stock analyses in the VBA_Challenge.xlsm workbook match the outputs from the AllStockAnalysis in the module (5 pt).
+2017 
+![VBA_green_stocks_2017](https://user-images.githubusercontent.com/111623064/197681265-a885b73b-5c03-4e2d-989c-d137386abc11.png)
+![VBA_Challenge_2017](https://user-images.githubusercontent.com/111623064/197681235-1b6b67f9-a176-4bf6-81b7-6c20a3dc147d.png)
 
-> 8. The pop-up messages showing the elapsed run time for the script are saved as VBA_Challenge_2018.png and VBA_Challenge_2018.png (5 pt).
+2018
+![VBA_green_stocks_2018](https://user-images.githubusercontent.com/111623064/197681322-d9596cc5-b428-4381-b5f5-f93c3494cd73.png)
+![VBA_Challenge_2018](https://user-images.githubusercontent.com/111623064/197681306-a4652268-e0a8-4dd8-99ac-86abb9fd1ba1.png)
+
 
 ## Challenge Summary
 Advantages of refactoring code: 
