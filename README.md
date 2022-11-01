@@ -106,7 +106,9 @@ While both versions of code produce the same results, we can determine that the 
 
 ## Challenge Summary
 Advantages of refactoring code: 
+
 Refactoring code is a common and neccesary part of the coding process. It allows us to improve efficiecy by taking fewer steps and using less memory. In addition, we can make our code more readable / user friendly which can assist any future users that may use or build upon our code. For this exercise specifically, refactoring our code allowed us to do all 3 of those things - take fewers steps, use less memory, and make our easier to read for future users. Ultimatley - our refactored code was only 0.2 seconds faster than our original, but for analyzing thousands of stocks the more effienct our code, the better. 
 
 Disadvantages of refactoring code: 
+
 While usefull, refactoring code can be time consuming and we do risk the possibility of making a mistake, and creating even more work for ourselves in the longrun. Code refactoring can assist to help find bugs, it can also create new ones. Essentially it's a double edged swoard - we must make sure that the improved effiency will outweigh the risks. For the purpose of this excercise, the benefits did outweigh the risks. Challenges did arrise as I was still learning the syntax, but it was not teribly time consuming, and we were able to improve the efficiency and usability of the code. 
